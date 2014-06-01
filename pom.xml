@@ -11,6 +11,29 @@
         <xo.version>0.4.0-SNAPSHOT</xo.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>sonatype-oss</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>neo4j-releases</id>
+            <url>http://m2.neo4j.org/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    
     <dependencies>
         <dependency>
             <groupId>com.mysema.querydsl</groupId>
