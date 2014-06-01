@@ -1,20 +1,21 @@
 package com.smbtec.xo.querydsl.sample;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.neo4j.cypherdsl.CypherQuery.lookup;
-import static org.neo4j.cypherdsl.CypherQuery.param;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.neo4j.cypherdsl.CypherQuery.allNodes;
+import static org.neo4j.cypherdsl.CypherQuery.nodesById;
 import static org.neo4j.cypherdsl.CypherQuery.start;
 import static org.neo4j.cypherdsl.querydsl.CypherQueryDSL.identifier;
+import static org.neo4j.cypherdsl.querydsl.CypherQueryDSL.toBooleanExpression;
 
 import java.net.URISyntaxException;
 import java.util.Collection;
-
-import static org.hamcrest.core.IsEqual.equalTo;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.neo4j.cypherdsl.grammar.Execute;
 
 import com.buschmais.xo.api.XOManager;
 import com.buschmais.xo.api.bootstrap.XOUnit;
@@ -22,24 +23,6 @@ import com.buschmais.xo.neo4j.test.AbstractNeo4jXOManagerTest;
 import com.smbtec.xo.querydsl.sample.domain.Group;
 import com.smbtec.xo.querydsl.sample.domain.Person;
 import com.smbtec.xo.querydsl.sample.domain.QPerson;
-
-import static org.neo4j.cypherdsl.CypherQuery.allNodes;
-import static org.neo4j.cypherdsl.CypherQuery.identifier;
-import static org.neo4j.cypherdsl.CypherQuery.lookup;
-import static org.neo4j.cypherdsl.CypherQuery.nodesById;
-import static org.neo4j.cypherdsl.CypherQuery.start;
-import static org.neo4j.cypherdsl.CypherQuery.match;
-import static org.neo4j.cypherdsl.CypherQuery.node;
-import static org.neo4j.cypherdsl.CypherQuery.value;
-import static org.neo4j.cypherdsl.CypherQuery.param;
-import static org.neo4j.cypherdsl.querydsl.CypherQueryDSL.identifier;
-import static org.neo4j.cypherdsl.querydsl.CypherQueryDSL.toBooleanExpression;
-
-import org.neo4j.cypherdsl.Identifier;
-import org.neo4j.cypherdsl.grammar.Execute;
-import org.neo4j.cypherdsl.grammar.ReturnNext;
-import org.neo4j.cypherdsl.grammar.StartNext;
-import org.neo4j.cypherdsl.querydsl.CypherQueryDSL;
 
 @RunWith(Parameterized.class)
 public class XoCypherQuerydslTest extends AbstractNeo4jXOManagerTest {
@@ -85,6 +68,5 @@ public class XoCypherQuerydslTest extends AbstractNeo4jXOManagerTest {
         xoManager.currentTransaction().commit();
         assertThat(person, equalTo(result));
     }
-
 
 }
