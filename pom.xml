@@ -33,7 +33,7 @@
             </snapshots>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.mysema.querydsl</groupId>
@@ -135,6 +135,7 @@
                 <version>1.0.4</version>
                 <executions>
                     <execution>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>process</goal>
                         </goals>
@@ -151,8 +152,8 @@
     <inceptionYear>2014</inceptionYear>
     <name>Querydsl - eXtended Objects support - Sample</name>
     <organization>
-    	<name>SMB GmbH</name>
-    	<url>http://www.smb-tec.com/en</url>
+        <name>SMB GmbH</name>
+        <url>http://www.smb-tec.com/en</url>
     </organization>
     <description>eXtended Objects support support for Querydsl (Sample)</description>
 </project>

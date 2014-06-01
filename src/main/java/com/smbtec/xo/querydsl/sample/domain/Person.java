@@ -9,7 +9,6 @@ public interface Person {
     @Indexed
     String getName();
 
-
     void setName(String name);
 
 }
